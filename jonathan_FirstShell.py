@@ -1,6 +1,7 @@
 import os
 import platform
 import subprocess
+import datetime
 
 # Color definitions using ANSI escape codes
 CYAN = "\033[96m"
@@ -45,6 +46,17 @@ def run_shell():
             except Exception as e:
                 print(f"{YELLOW}Error changing directory: {e}{RESET}")
             continue
+
+        if command == "clear":
+            os.system("cls" if platform.system() == "Windows" else "clear")
+            continue
+
+        if command == "time":
+            now = datetime.datetime.now()
+            print(f"{YELLOW}Current time: {now.strftime('%Y-%m-%d %H:%M:%S')}{RESET}")
+            continue
+
+
 
         history.append(command)
 
