@@ -26,7 +26,7 @@ def run_shell():
 
         # BUILT-IN COMMANDS
         if command.lower() in ["exit", "quit"]:
-            print(f"{CYAN}Shell closed. Thank you for using JDLS Shell{RESET}")
+            print(f"{CYAN}Shell closed. Thank you for using JDLS Shell.{RESET}")
             break
 
         if command == "history":
@@ -98,8 +98,6 @@ def run_shell():
                 print(f"{YELLOW}Error creating directory: {e}{RESET}")
             continue
 
-
-        
 
         # PLATFORM-SPECIFIC COMMANDS ADJUSTMENTS
         system = platform.system()
